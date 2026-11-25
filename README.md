@@ -324,6 +324,11 @@ xcl rpf D:\data\shaders.rpf --extract NAME --out folder
 
 ## Tests
 
+Coverage reports (`python scripts/coverage_gate.py --run-json REPORT`) require non-negative
+integer counters, with each stage's `total` equal to its five outcomes combined. Invalid counts
+return exit code 2. A rejected `--update` keeps existing baseline bytes intact and does not
+create a missing baseline.
+
 ```powershell
 .\scripts\test.ps1                         # cargo build --workspace + cargo test --workspace
 ```
